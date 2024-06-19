@@ -1,0 +1,159 @@
+<mat-drawer-container autosize>
+  <mat-drawer mode="side" opened #drawer>
+    <div mat-subheader>Sessions</div>
+    <div>
+      <mat-form-field><mat-label>Filter</mat-label><input inputmode="none" matInput /></mat-form-field>
+      <button mat-button color="primary">
+        Apply
+      </button>
+    </div>
+    <mat-selection-list [multiple]="false">
+      <mat-list-option>
+         sessionName 
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-card>
+      <mat-card-content>
+        <button mat-button color="primary">
+          View sessions
+        </button>
+        <h4>Loading...</h4>
+        <h4>
+          No data!
+        </h4>
+        <mat-accordion multi>
+          <div>
+            <div>
+              <div>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <h3>Transect:  transectIndex + 1 </h3>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      <p>
+                         session.device  |
+                        <b>
+                           transect.bioticData.fishes.length  Collections
+                        </b>
+                      </p>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <mat-form-field >
+                    <mat-label>Distance</mat-label><input inputmode="none" matInput /></mat-form-field>
+                  <mat-form-field ><mat-label>Duration</mat-label><input inputmode="none"
+                      matInput /></mat-form-field>
+                  <mat-form-field
+                    ><mat-label>Amps</mat-label><input inputmode="none" matInput /></mat-form-field>
+                  <mat-form-field ><mat-label>Crew Leader</mat-label><input inputmode="none"
+                      matInput /></mat-form-field>
+                  <mat-form-field><mat-label>Date</mat-label><input inputmode="none" matInput /></mat-form-field>
+                  <mat-form-field ><mat-label>Time</mat-label><input inputmode="none"
+                      matInput /></mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label> Primary Habitat </mat-label>
+                    <mat-select>
+                      <mat-option>
+                         habitat.description 
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label> Secondary Habitat </mat-label>
+                    <mat-select>
+                      <mat-option>
+                         habitat.description 
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field><mat-label>Temp</mat-label><input inputmode="none" matInput /></mat-form-field>
+                  <mat-form-field><mat-label>Scale</mat-label><input inputmode="none" matInput /></mat-form-field>
+                  <mat-form-field ><mat-label>No Fish</mat-label><input inputmode="none"
+                      matInput /></mat-form-field>
+                  <mat-form-field ><mat-label>Comments</mat-label><input inputmode="none"
+                      matInput /></mat-form-field>
+
+                  <mat-form-field>
+                    <mat-label> Owner </mat-label>
+                    <mat-select>
+                      <mat-option>
+                         owner.description 
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <div>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          Collection  collectionIndex + 1 
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          <p>
+                             collection.number 
+                            <b>
+                              getFishSpeciesFromId(collection.species)?.name
+                              </b>
+                          </p>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+
+                      <mat-form-field><mat-label>Number</mat-label><input inputmode="none" matInput /></mat-form-field>
+                      <mat-form-field><mat-label>Species</mat-label><input inputmode="none" matInput /></mat-form-field>
+                      <mat-form-field><mat-label>Species Name</mat-label><input inputmode="none" readonly
+                          matInput /></mat-form-field>
+                      <mat-form-field><mat-label>Length</mat-label><input inputmode="none" matInput /></mat-form-field>
+                      <mat-form-field><mat-label>Weight</mat-label><input inputmode="none" matInput /></mat-form-field>
+                      <mat-form-field><mat-label>Voucher</mat-label><input inputmode="none" matInput /></mat-form-field>
+
+                      <mat-form-field>
+                        <mat-label>Abnormality</mat-label>
+                        <mat-select>
+                          <mat-option>
+                             abnormality.description 
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                      <mat-form-field ><mat-label>Young Of Year</mat-label><input inputmode="none"
+                          matInput /></mat-form-field>
+                      <mat-form-field ><mat-label>Estimate</mat-label><input inputmode="none"
+                          matInput /></mat-form-field>
+                      <mat-form-field ><mat-label>Comments</mat-label><input inputmode="none"
+                          matInput /></mat-form-field>
+                    </mat-expansion-panel>
+                  </div>
+                </mat-expansion-panel>
+
+              </div>
+            </div>
+          </div>
+        </mat-accordion>
+      </mat-card-content>
+      <mat-card-actions>
+        <div>
+          <button mat-raised-button color="primary">
+            Exit
+          </button>
+          <button mat-raised-button color="primary">
+            Save
+          </button>
+          <button mat-raised-button color="primary">
+            Collapse All
+          </button>
+        </div>
+        <div>
+          <button mat-raised-button color="primary">
+            Upload and Archive Session
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </mat-drawer-content>
+</mat-drawer-container>
